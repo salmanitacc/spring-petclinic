@@ -11,8 +11,6 @@ services:
       - MYSQL_DATABASE=petclinic
     volumes:
       - "./conf.d:/etc/mysql/conf.d:ro"
-    networks:
-      - teamcity-net
 
   postgres:
     image: postgres:18.4
@@ -22,9 +20,3 @@ services:
       - POSTGRES_PASSWORD=petclinic
       - POSTGRES_USER=petclinic
       - POSTGRES_DB=petclinic
-    networks:
-      - teamcity-net
-
-networks:
-  teamcity-net:
-    external: true
